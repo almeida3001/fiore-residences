@@ -179,7 +179,9 @@ section{position:relative;z-index:2}
    ============================================================ */
 .hero{position:relative;min-height:100svh;min-height:100dvh;overflow:hidden}
 .hero-bg{position:absolute;inset:0;z-index:0;will-change:transform}
-.hero-bg img{width:100%;height:118%;object-fit:cover;object-position:center 52%;filter:brightness(.74) contrast(1.04) saturate(1.04)}
+.hero-bg video,.hero-bg img{position:absolute;inset:0;width:100%;height:118%;object-fit:cover;object-position:center 52%;filter:brightness(.74) contrast(1.04) saturate(1.04)}
+.hero-bg img{z-index:0}
+.hero-bg video{z-index:1}
 .hero-shade{position:absolute;inset:0;z-index:1;pointer-events:none;background:
   linear-gradient(90deg,rgba(16,13,9,.92) 0%,rgba(16,13,9,.6) 38%,rgba(16,13,9,.32) 66%,rgba(16,13,9,.5) 100%),
   linear-gradient(180deg,rgba(16,13,9,.5) 0%,transparent 24%,transparent 48%,rgba(16,13,9,.8) 86%,var(--bg) 100%),
@@ -436,5 +438,6 @@ section{position:relative;z-index:2}
 @media(prefers-reduced-motion:reduce){
   *{animation:none!important;transition-duration:.01ms!important}
   [data-rise]{opacity:1;transform:none}
-  .hero-bg img{height:100%}
+  .hero-bg img,.hero-bg video{height:100%}
+  .hero-bg video{display:none}
 }
