@@ -155,6 +155,14 @@
       });
     }
 
+    /* banner parallax bg */
+    $$('[data-banner-bg]').forEach((bg) => {
+      gsap.fromTo(bg, { yPercent: -9 }, {
+        yPercent: 9, ease: 'none',
+        scrollTrigger: { trigger: bg.closest('.banner'), start: 'top bottom', end: 'bottom top', scrub: true }
+      });
+    });
+
     /* generic rise */
     $$('[data-rise]').forEach((el) => {
       if (el.closest('.hero')) return;
