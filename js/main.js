@@ -480,6 +480,26 @@
     ScrollTrigger.refresh();
   }
 
+  /* floating sales CTA — reveal after hero, hide over the lead form */
+  function initFloatCta() {
+    const cta = $('.float-cta');
+    if (!cta) return;
+    if (!window.ScrollTrigger) { cta.classList.add('show'); return; }
+    ScrollTrigger.create({
+      trigger: '.hero', start: 'bottom 75%',
+      onEnter: () => cta.classList.add('show'),
+      onLeaveBack: () => cta.classList.remove('show')
+    });
+    const form = document.querySelector('#cadastro');
+    if (form) ScrollTrigger.create({
+      trigger: form, start: 'top 75%', end: 'bottom 25%',
+      onEnter: () => cta.classList.add('hidden'),
+      onLeave: () => cta.classList.remove('hidden'),
+      onEnterBack: () => cta.classList.add('hidden'),
+      onLeaveBack: () => cta.classList.remove('hidden')
+    });
+  }
+
   /* ============================================================
      BOOT
      ============================================================ */
@@ -490,6 +510,7 @@
     initVideos();
     initAnimations();
     initScrollMagic();
+    initFloatCta();
   }
   // wait for fonts to avoid split jumps
   const start = () => preloader(boot);
