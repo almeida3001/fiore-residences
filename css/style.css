@@ -82,7 +82,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 }
 .eyebrow::before{content:"";width:26px;height:1px;background:var(--gold);display:inline-block}
 .lead{font-size:clamp(1.05rem,1.5vw,1.32rem);color:var(--ink-dim);max-width:54ch;line-height:1.6}
-.gradient-text{background:var(--accent-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.gradient-text{background:var(--accent-grad);-webkit-background-clip:text;background-clip:text;color:transparent;padding-right:.14em;margin-right:-.08em}
 .metal-text{background:var(--metal);-webkit-background-clip:text;background-clip:text;color:transparent}
 .italic{font-style:italic}
 
