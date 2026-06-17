@@ -256,7 +256,8 @@ section{position:relative;z-index:2}
   .hero-proof{width:100%;justify-content:space-between}
   .scroll-cue{display:none}
 }
-@media(max-width:420px){.hero-proof{gap:10px;padding:14px 16px}.proof-item span{font-size:.58rem}}
+@media(max-width:480px){.proof-item strong{font-size:1.18rem}}
+@media(max-width:420px){.hero-proof{gap:10px;padding:14px 16px}.proof-item strong{font-size:1.08rem}.proof-item span{font-size:.58rem}}
 
 /* ============================================================
    MARQUEE
