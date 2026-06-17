@@ -241,11 +241,6 @@ section{position:relative;z-index:2}
 /* ============================================================
    MARQUEE
    ============================================================ */
-.marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:clamp(16px,2.4vw,26px) 0;overflow:hidden;background:var(--bg)}
-.marquee-track{display:flex;gap:0;white-space:nowrap;width:max-content;will-change:transform}
-.marquee-track span{font-family:var(--f-display);font-weight:500;font-size:clamp(1.4rem,3.2vw,2.5rem);letter-spacing:.01em;padding:0 .55em;color:var(--ink)}
-.marquee-track .sep{color:var(--gold)}
-.marquee-track .out{color:transparent;-webkit-text-stroke:1px rgba(244,238,227,.32)}
 
 /* ============================================================
    MANIFESTO / O EMPREENDIMENTO

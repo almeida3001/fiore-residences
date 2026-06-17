@@ -181,21 +181,6 @@
       });
     });
 
-    /* marquee infinite */
-    const track = $('.marquee-track');
-    if (track) {
-      const w = track.scrollWidth / 2;
-      gsap.to(track, { x: -w, duration: 22, ease: 'none', repeat: -1 });
-      // velocity skew on scroll
-      let curX = 0;
-      ScrollTrigger.create({
-        onUpdate: (self) => {
-          const v = gsap.utils.clamp(-60, 60, self.getVelocity() / -60);
-          gsap.to(track, { x: '+=' + v, duration: .4, overwrite: false });
-        }
-      });
-    }
-
     /* manifesto word-by-word color fill */
     const man = $('[data-manifesto]');
     if (man) {
