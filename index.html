@@ -146,7 +146,9 @@
 
 <!-- ============ BANNER 1 (lazer / resort) ============ -->
 <section class="banner">
-  <div class="banner-bg" data-banner-bg><img src="img/areas/piscina-2.jpg" alt="Piscina do Fiore com parede de azulejo autoral e luz quente" loading="lazy"></div>
+  <div class="banner-bg" data-banner-bg>
+    <video class="banner-video" autoplay muted loop playsinline preload="auto" poster="img/areas/banner-lazer-poster.jpg" aria-label="Áreas de lazer do Fiore ao entardecer"><source src="video/banner-lazer.mp4" type="video/mp4"></video>
+  </div>
   <div class="wrap">
     <span class="eyebrow" data-rise>O dia inteiro, dentro de casa</span>
     <h2 data-split>Lazer com cara<br>de resort</h2>
@@ -380,12 +382,12 @@
 <script>
 /* garante o autoplay do vídeo do hero no mobile (iOS exige muted + play() explícito) */
 (function(){
-  var hv = document.querySelector('.hero-video');
-  if(!hv) return;
-  hv.muted = true; hv.setAttribute('muted',''); hv.setAttribute('playsinline','');
-  var go = function(){ try{ var p = hv.play(); if(p && p.catch) p.catch(function(){}); }catch(e){} };
+  var vids = document.querySelectorAll('.hero-video, .banner-video');
+  if(!vids.length) return;
+  vids.forEach(function(v){ v.muted = true; v.setAttribute('muted',''); v.setAttribute('playsinline',''); });
+  var go = function(){ vids.forEach(function(v){ try{ var p = v.play(); if(p && p.catch) p.catch(function(){}); }catch(e){} }); };
   go();
-  hv.addEventListener('loadeddata', go, { once:true });
+  vids.forEach(function(v){ v.addEventListener('loadeddata', go, { once:true }); });
   ['touchstart','pointerdown','click','scroll'].forEach(function(ev){
     document.addEventListener(ev, go, { once:true, passive:true });
   });

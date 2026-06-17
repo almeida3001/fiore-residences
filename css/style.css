@@ -363,7 +363,7 @@ section{position:relative;z-index:2}
 /* ---- BANNER full-bleed (parallax) ---- */
 .banner{position:relative;height:clamp(380px,64vh,660px);overflow:hidden;display:flex;align-items:flex-end;z-index:2}
 .banner-bg{position:absolute;inset:0;z-index:0;will-change:transform}
-.banner-bg img{width:100%;height:122%;object-fit:cover;filter:brightness(.6) contrast(1.06) saturate(1.03)}
+.banner-bg img,.banner-bg video{width:100%;height:122%;object-fit:cover;filter:brightness(.6) contrast(1.06) saturate(1.03)}
 .banner::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(16,13,9,.5) 0%,transparent 30%,transparent 52%,rgba(16,13,9,.78) 100%)}
 .banner .wrap{position:relative;z-index:2;padding-bottom:clamp(34px,6vh,64px);padding-top:clamp(40px,8vh,80px)}
 .banner .eyebrow{color:var(--gold-soft);margin-bottom:clamp(14px,2vh,22px)}
