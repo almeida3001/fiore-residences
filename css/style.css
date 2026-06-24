@@ -466,6 +466,28 @@ section{position:relative;z-index:2}
 .cursor-ring.grow{width:74px;height:74px;background:rgba(201,167,95,.1);border-color:transparent}
 @media(hover:none),(max-width:980px){.cursor,.cursor-ring{display:none}}
 
+/* ---- MERGULHO (scroll cinematic: fachada -> varanda) ---- */
+.dive{position:relative;height:300vh;z-index:2}
+.dive-stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;background:var(--bg)}
+.dive-layer{position:absolute;inset:0;will-change:transform,opacity}
+.dive-layer img{width:100%;height:100%;object-fit:cover}
+.dl-far{z-index:0}
+.dl-near{z-index:1;opacity:0}
+.dive-shade{position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(180deg,rgba(16,13,9,.5) 0%,transparent 28%,transparent 52%,rgba(16,13,9,.86) 100%)}
+.dive-copy{position:absolute;inset:0;z-index:3;display:grid;place-items:center;text-align:center;padding:var(--gut)}
+.dive-copy > *{grid-row:1;grid-column:1;max-width:48ch}
+.dive-eyebrow{display:inline-block;font-family:var(--f-body);font-size:clamp(.7rem,.82vw,.82rem);font-weight:700;letter-spacing:.34em;text-transform:uppercase;color:var(--ink-dim);margin-bottom:18px}
+.dive-h{font-size:clamp(2.4rem,7vw,6rem);line-height:.98;letter-spacing:-.02em;color:var(--ink);margin:0}
+.dive-end{display:flex;flex-direction:column;align-items:center;gap:18px}
+.dive-end p{color:var(--ink-dim);font-size:clamp(1rem,1.4vw,1.25rem);margin:0;max-width:42ch}
+.dive-end .dive-eyebrow{margin-bottom:6px}
+@media(prefers-reduced-motion:reduce){
+  .dive{height:auto}
+  .dive-stage{position:relative;height:auto;min-height:auto;padding:clamp(70px,12vh,140px) 0}
+  .dl-near{opacity:1}.dl-far{display:none}
+  .dive-intro{display:none}.dive-end{position:relative}
+}
+
 /* ---- FLOATING SALES CTA ---- */
 .float-cta{
   position:fixed;right:clamp(16px,2vw,30px);bottom:clamp(16px,2vw,30px);z-index:900;

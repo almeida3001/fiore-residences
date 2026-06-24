@@ -485,6 +485,26 @@
     });
   }
 
+  /* mergulho cinematográfico: a fachada empurra pra dentro e revela o interior na varanda */
+  function initDive() {
+    const dive = $('.dive');
+    if (!dive || !window.ScrollTrigger || !window.gsap) return;
+    const far = $('.dl-far'), near = $('.dl-near'),
+          intro = $('.dive-intro'), end = $('.dive-end');
+    if (!far || !near) return;
+    gsap.set(far, { scale: 1 });
+    gsap.set(near, { opacity: 0, scale: 1.18 });
+    gsap.set(intro, { opacity: 1, y: 0 });
+    gsap.set(end, { opacity: 0, y: 24 });
+    const tl = gsap.timeline({
+      scrollTrigger: { trigger: dive, start: 'top top', end: 'bottom bottom', scrub: 0.6 }
+    });
+    tl.to(far,   { scale: 1.4, ease: 'none', duration: 1 }, 0)
+      .to(intro, { opacity: 0, y: -40, ease: 'none', duration: 0.28 }, 0.16)
+      .to(near,  { opacity: 1, scale: 1.02, ease: 'none', duration: 0.4 }, 0.34)
+      .to(end,   { opacity: 1, y: 0, ease: 'none', duration: 0.24 }, 0.72);
+  }
+
   /* ============================================================
      BOOT
      ============================================================ */
@@ -496,6 +516,7 @@
     initAnimations();
     initScrollMagic();
     initFloatCta();
+    initDive();
   }
   // wait for fonts to avoid split jumps
   const start = () => preloader(boot);
