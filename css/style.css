@@ -381,6 +381,9 @@ section{position:relative;z-index:2}
 .plans-list{list-style:none;margin:clamp(22px,3vh,34px) 0 0;padding:0;display:grid;gap:14px}
 .plans-list li{display:flex;gap:14px;align-items:flex-start;color:var(--ink-dim);font-size:1rem}
 .plans-list svg{width:20px;height:20px;flex:0 0 auto;margin-top:2px;color:var(--gold)}
+.tipo-tag{margin:clamp(24px,3.4vh,34px) 0 0;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-soft);font-weight:700}
+.tipo-tag + .plans-list{margin-top:14px}
+.plans-list b{color:var(--ink);font-weight:500}
 .plans-aside{position:relative;z-index:2;text-align:center;border:1px solid var(--line);border-radius:18px;background:rgba(16,13,9,.4);padding:clamp(28px,4vw,46px)}
 .plans-aside .tag{font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
 .plans-aside .big{font-family:var(--f-display);font-size:clamp(1.6rem,2.6vw,2.2rem);margin:.4em 0 .2em;line-height:1.05}
