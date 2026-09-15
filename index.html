@@ -484,6 +484,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             + 'WhatsApp: ' + tel + '\n'
             + (mail ? ('E-mail: ' + mail + '\n') : '')
             + 'Interesse: ' + intr;
+    try{
+      fetch('https://api.inovarmidia.com/webhook/leads/75ccb6b7-0332-4454-9fc6-558f2f33acb6', {
+        method:'POST', mode:'no-cors', keepalive:true,
+        headers:{'Content-Type':'text/plain'},
+        body: JSON.stringify({name:nome, phone:tel, email:mail, interesse:intr, origem:'site-fiore', pagina:location.href})
+      }).catch(function(){});
+    }catch(err){}
     window.open('https://wa.me/' + PHONE + '?text=' + encodeURIComponent(msg), '_blank', 'noopener');
   });
 })();
