@@ -212,7 +212,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="feats tone-warm" id="lazer">
   <div class="wrap clube-split">
     <div class="clube-video" data-rise>
-      <video src="img/v2/clube.mp4" poster="img/v2/clube-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Filme das áreas de lazer do Fiore Residences"></video>
+      <video src="img/v2/clube.mp4" poster="img/v2/clube-poster.jpg" playsinline preload="metadata" aria-label="Filme das áreas de lazer do Fiore Residences"></video>
+      <button class="clube-play" type="button" aria-label="Assistir ao filme com som"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg><span>Assistir ao filme</span></button>
     </div>
     <div class="diff-head">
       <h2 class="display h-l" data-split>Um clube dentro<br>de casa</h2>
@@ -486,6 +487,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     window.open('https://wa.me/' + PHONE + '?text=' + encodeURIComponent(msg), '_blank', 'noopener');
   });
 })();
+</script>
+<script>
+(function(){var w=document.querySelector('.clube-video');if(!w)return;var v=w.querySelector('video'),b=w.querySelector('.clube-play');
+b.addEventListener('click',function(){v.muted=false;v.controls=true;v.play();w.classList.add('playing')});
+v.addEventListener('ended',function(){w.classList.remove('playing');v.controls=false;v.load()});})();
 </script>
 </body>
 </html>
